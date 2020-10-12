@@ -2,6 +2,8 @@ const path = require('path');
 const express = require('express');//it actually returns just a function
 const hbs = require('hbs');
 const app=express();
+
+const port=process.env.PORT||3000;
 const request = require('request');
 const geocode = require('./utils/geocode');
 const forecast = require('./utils/forecast');
@@ -91,6 +93,6 @@ app.get('*',(req,res)=>{
 
 
 
-app.listen(3000,()=>{             //to activate server/port number to listen and a callback
+app.listen(port,()=>{             //to activate server/port number to listen and a callback
   console.log('the server is running');
 })
